@@ -1,0 +1,297 @@
+body {
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+.shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* الشريط الأزرق الغامق الأمامي */
+.banner-dark {
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0e3149; /* درجة الأزرق الغامق */
+    clip-path: polygon(40% 0%, 100% 0%, 100% 35%, 15% 35%, 0 75%, 0 0);
+}
+.shape-middle_1 {
+    background-color: #00a4c5;
+    clip-path: polygon(7% 57%, 7% 74%, 0% 58%, 0% 31%);
+}
+.shape-middle_2 {
+    background-color: #00a4c5;
+    clip-path: polygon(1% 0%, 8% 0%, 17% 50%, 13% 51%);
+}
+/* 3. الشكل الأزرق الغامق السفلي العريض */
+.shape-bottom_1 {
+    background-color: #0f6b95;
+    clip-path: polygon(4% 67%, 7% 74%, 0% 100%, 0% 78%); /* معدل ليتناسب مع الفراغات */
+}
+.shape-bottom_2 {
+    background-color: #0f6b95;
+    clip-path: polygon(17% 35%, 22% 35%, 17% 50%, 15% 40%);
+}
+.alpha-bit-header {
+    position: absolute;
+    top: 105px;
+    right: 5%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* تنسيق صورة الشعار */
+.logo-image {
+    height: 100px; /* يمكنك تعديل الارتفاع حسب الرغبة */
+    width: auto; /* الحفاظ على أبعاد الصورة */
+}
+
+/* تنسيق النص مراعاةً للون والخط في الصورة */
+.brand-text {
+    font-size: 2.5rem; /* حجم الخط */
+    font-weight: 600; /* سماكة الخط */
+    color: #0b7299; /* درجة اللون الأزرق التقريبية الموجودة في التصميم */
+    margin: 0; /* إلغاء الهوامش التلقائية لـ h1 */
+}
+/* الحاوية الرئيسية للأزرار */
+/* ==================== 1. حاوية الأزرار العلوية والأزرار ==================== */
+/* الحاوية الكبرى الشاملة لجميع الأزرار لتوحيد التموضع والمقاسات *//* ==================== 1. حاوية الأزرار العلوية والأزرار ==================== */
+.buttons-container {
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: flex-start; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    width: 90%;
+    margin-right: auto; 
+    margin-left: 7%; 
+    position: absolute;
+    top: 250px;
+    box-sizing: border-box;
+}
+
+.custom-btn {
+    background-color: #ffffff; 
+    border: 2px solid #222222; 
+    border-radius: 12px; 
+    color: #111111; 
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    padding: 12px 0; /* البادينغ الجانبي صفر والاعتماد على العرض الحسابي الدقيق */
+    cursor: pointer; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease; 
+    z-index: 1;
+    box-sizing: border-box;
+    flex: 1 1 180px;
+
+}
+
+.custom-btn:hover {
+    background-color: #f5f5f5; 
+    transform: translateY(-2px); 
+}
+
+
+/* ==================== 2. حاوية البطاقات السفلية والبطاقات ==================== */
+.tasks-container {
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: flex-end; 
+    gap: 20px; /* نفس مسافة الفراغ العلوي */
+    padding: 23px 0;
+    width: 90%; 
+    margin-right: auto; 
+    margin-left: 7%;
+    box-sizing: border-box;
+    
+}
+
+.task-card {
+    background-color: #ffffff;
+    border: 2px solid #222222; 
+    border-radius: 12px;
+    color: #333333;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 15px 0; 
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+/* تنسيق بطاقة Task 1 (تأخذ مساحة تماثل تماماً مساحة زر واحد من الأعلى) */
+.active-task {
+    color: #111111;
+    font-weight: 700; 
+    width: calc(((100% - 20px) / 3  )); 
+    cursor: pointer; 
+}
+.active-task:hover {
+    background-color: #f5f5f5; 
+    transform: translateY(-2px); 
+}
+
+/* تنسيق بطاقة First website (تغطي زرين علويين + الفجوة بينهما وتلغي فراغ اليمين) */
+.task-card:not(.active-task) {
+    padding-top: 50%;
+    color: #363737;
+    font-weight: 100;
+    width: calc(((100% - 20px) / 3) * 2 + 20px);
+    text-align: left;
+    padding: 12px;
+}
+/* تنسيق الحاوية الرئيسية للنص */
+.task {
+    text-align: left;        /* محاذاة كافة النصوص إلى اليسار */
+    padding: 40px; /* ترك مسافة مريحة من الحواف داخل الـ div */
+    padding-top: 0;
+    font-family: sans-serif; /* نوع الخط الأساسي المشابه للصورة */
+    padding-bottom: 700px; /* ترك مسافة كبيرة أسفل النصوص لتجنب تداخلها مع الحاوية السفلية */
+}
+
+/* تنسيق العنوان الرئيسي (Task overview) */
+.task h1 {
+    font-size: 54px;         /* حجم الخط الكبير كما في الصورة */
+    font-weight: 500;        /* سمك خط متوسط/عادي */
+    color: #1A365D;          /* اللون الأزرق الداكن المائل للكحلي */
+    margin-bottom: 20px;     /* مسافة أسفل العنوان */
+}
+
+/* تنسيق الفقرة (Convert this figma...) */
+.task p {
+    font-size: 24px;         /* حجم خط متوسط للفقرة */
+    color: #2D3748;          /* لون رمادي غامق ومريح للعين */
+    margin-bottom: 25px;     /* مسافة تفصلها عن الرابط بالأسفل */
+}
+
+/* تنسيق رابط Figma */
+.task a {
+    font-size: 24px;         /* نفس حجم خط الفقرة لتناسق المظهر */
+    color: #2B6CB0;          /* لون أزرق مخصص للروابط */
+    text-decoration: none;   /* إزالة الخط السفلي التلقائي للرابط ليطابق الصورة */
+    word-break: break-all;   /* لضمان انكسار الرابط الطويل بشكل صحيح دون تخريب التصميم */
+    line-height: 1.5;        /* توزيع أسطر مريح للرابط في حال انقسم لسطرين */
+}
+
+/* تأثير عند تمرير الفأرة فوق الرابط (اختياري لجمالية الموقع) */
+.task a:hover {
+    text-decoration: underline; /* يظهر الخط السفلي فقط عند التأشير عليه */
+}
+.taxt-link {
+    padding-left: 50px;
+}
+
+/* تنسيق الحاوية الرئيسية للنصوص */
+.signature-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center; /* لمحاذاة النصوص والتوقيع في المنتصف */
+    display: block;     /* تغييره إلى block لضمان نزول الفوتر أسفله تماماً */
+    padding: 40px;
+    margin-top: 50px;   /* مسافة تفصل التوقيع عن محتوى الموقع العلوي */
+    margin-bottom: 0;/* مسافة تفصل التوقيع عن الفوتر الأزرق */
+    position: absolute; 
+    
+    /* رفعه فوق الفوتر الأزرق */
+    z-index: 5; 
+    
+    /* تحديد مكانه في أسفل اليسار */
+    bottom: 40px;  /* يرتفع عن أسفل الصفحة بمقدار 40 بكسل ليكون فوق الفوتر أو متداخلاً معه بجمالية */
+    left: 50px; 
+}
+
+/* تنسيق السطر الأول: المؤسس والمدير التنفيذي */
+.signature-container .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+/* تنسيق السطر الثاني: مشرف واجهات المستخدم */
+.signature-container .subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+/* تنسيق السطر الثالث: الاسم بخط مائل يحاكي التوقيع */
+.signature-container .name {
+    /* تم تغيير التنسيق واستخدام !important لإجبار المتصفح على تطبيق خط الـ Google Font المشبوك المتصل */
+    font-family: 'Alex Brush', cursive !important;
+    font-size: 18px; /* تكبير الحجم ليظهر جمال الخط المتصل بوضوح */
+    font-style: italic;
+    color: #000000;
+    display: inline-block;
+    transform: skewX(-20deg);
+    text-rendering: optimizeLegibility;
+}
+.footer-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    z-index: 3;
+    padding: 0;
+    clear: both;
+    overflow: hidden; /* لمنع أي مضلع من الخروج عن حدود الفوتر */
+}
+.footer-shape {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none; /* لتفادي حجب أي روابط خلف الأشكال */
+}
+.fbanner-dark-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0e3149; /* لون الخلفية الداكن */
+    z-index: 1;
+    clip-path: polygon(72% 48%, 92% 73%, 100% 30%, 100% 100%, 70% 100%, 0% 100%, 0% 77%, 54% 77%);
+}
+.fbanner-dark_1 {
+    background-color: #0f6b95; /* درجة أزرق أفتح متوسطة */
+    z-index: 2;
+    clip-path: polygon(100% 0%, 100% 22%, 95% 48%, 93% 38%);
+}
+.shape-cyan_1 {
+     /* اللون السماوي الزاهي */
+    background-color: #00a4c5;
+    z-index: 2;
+    clip-path: polygon(100% 63%, 100% 82%, 93% 55%, 93% 38%);
+}
+.shape-line {
+    background-color: #00a4c5; /* نفس اللون السماوي الزاهي */
+    z-index: 2;
+    clip-path: polygon(100% 93%, 100% 95%, 0% 95%, 0% 93%);
+}
+.fbanner-dark_2 {
+    background-color: #00a4c5; /* نفس درجة الأزرق الفاتح */
+    z-index: 3;
+    clip-path: polygon(86% 94%, 75% 94%, 51% 39%, 58% 39%);;
+}
+.shape-cyan_2 {
+    background-color: #0f6b95; /* نفس اللون السماوي متوسطة */
+    z-index: 0;
+    clip-path: polygon(51% 39%, 58% 39%, 52% 84%, 45% 82%);
+}
